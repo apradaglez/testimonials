@@ -1,0 +1,126 @@
+:root {
+  --clr-white: #FFFFFF;
+  --clr-titles: #D9381E;
+  --clr-bg: #E5E5E5;
+}
+
+@font-face {
+  font-family: 'LuckiestGuy';
+  src: url('../fonts/LuckiestGuy-Regular.ttf') format('truetype'),
+  ('../fonts/LuckiestGuy-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/PTSans-Regular.ttf') format('truetype'),
+  ('../fonts/PTSans-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+body {
+  font-family: 'PTSans';
+  font-size: 17px;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: var(--clr-bg);
+}
+
+.container {
+  width: 90vw;
+  max-width: 1152px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--clr-white);
+  padding: 2rem 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    width: 90vw;
+  }
+}
+
+.title__h1 {
+  font-family: 'LuckiestGuy';
+  color: var(--clr-titles);
+  font-size: clamp(2.5rem, 3vw + 1rem, 3.5rem);
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.cards {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 2rem;
+}
+
+@media screen and (min-width: 376px) {
+  .cards {
+    width: 80%;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(244px, 1fr));
+  }
+}
+
+@media screen and (min-width: 890px) {
+  .cards {
+    width: 100%;
+  }
+  .card {
+    min-height: 440px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 244px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  background-color: var(--clr-bg);
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.card__img {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  object-fit: content;
+  margin: 1rem auto;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.card__p {
+  margin-bottom: 1.5rem;
+}
+
+.card-footer {
+  margin-top: auto;
+  border: 1px solid blue;
+}
+
+.card-footer__h2 {
+  font-family: 'LuckiestGuy';
+  color: var(--clr-titles);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card-footer__p {
+  font-size: .8rem;
+}
